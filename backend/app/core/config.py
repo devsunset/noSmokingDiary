@@ -37,9 +37,9 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
-    SQLALCHEMY_DATABASE_URI: Optional[str] = "sqlite:///example.db"
+    SQLALCHEMY_DATABASE_URI: Optional[str] = "sqlite:///nosmokingdiary.db"
     FIRST_SUPERUSER: EmailStr = "admin@devsunset.com"
-    FIRST_SUPERUSER_PW: str = "admin"
+    FIRST_SUPERUSER_PW: str = "admin123"
     FIRST_SUPERUSER_STOP_DATE: str = "2023-03-09"
 
     class Config:

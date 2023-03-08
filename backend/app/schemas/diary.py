@@ -6,13 +6,13 @@ from typing import Sequence
 class DiaryBase(BaseModel):
     label: str
     source: str
-    url: HttpUrl
+    url: str
 
 
 class DiaryCreate(DiaryBase):
     label: str
     source: str
-    url: HttpUrl
+    url: str
     submitter_id: int
 
 
