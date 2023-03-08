@@ -132,7 +132,6 @@ const DiaryDashboard = () => {
 						Create Diary
 					</button>
 
-					<p className="text-base leading-relaxed text-white">Latest diaries</p>
 					<div className="mainViewport text-white">
 						{diaries.length && (
 							<ProfileView

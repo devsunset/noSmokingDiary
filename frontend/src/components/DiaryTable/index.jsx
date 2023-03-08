@@ -16,7 +16,7 @@ const DiaryTable = ({diaries}) => {
               ))
           )}
           {!diaries.length && (
-              <p>No diaries found!</p>
+              <p>No data</p>
           )}
         </div>
         {diaryInfoModal && <PopupModal
