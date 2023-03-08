@@ -51,7 +51,7 @@ const Home = () => {
 
                          <div className="flex flex-col flex-wrap pb-6 mb-12 text-white ">
                               <h1 className="mb-6 text-3xl font-medium text-white">
-                                   No Smoking Diary - History
+                                   No Smoking Diary
                               </h1>
                               {/* <!-- This is an example component --> */}
                               <div className="container flex justify-center items-center mb-6">

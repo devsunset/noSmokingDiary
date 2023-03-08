@@ -6,7 +6,7 @@ function Footer() {
       <footer className={"text-center p-4 bg-black mt-auto text-white"}>
           <div >
             © 2023 Copyright:
-            <a className="text-white ml-5" href="https://christophergs.com/">No Smoking Diary - History</a>
+            <a className="text-white ml-5" href="https://christophergs.com/">No Smoking Diary</a>
           </div>
       </footer>
   );

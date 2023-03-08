@@ -120,7 +120,7 @@ const DiaryDashboard = () => {
 				<div className="container px-5 pt-6 text-center mx-auto lg:px-20">
 						{/*TODO - move to component*/}
 					<h1 className="mb-12 text-3xl font-medium text-white">
-						No Smoking Diary - History
+						No Smoking Diary
 					</h1>
 
 					<button
