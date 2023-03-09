@@ -10,7 +10,7 @@ const DiaryTable = ({diaries}) => {
     return (
       <>
         <div className="sections-list">
-          {diaries.length && (
+          {diaries.length > 0 && (
               diaries.map((diary) => (
                 <Diary showDiaryInfoModal={() => setDiaryInfoModal(diary)} key={diary.id} diary={diary}  />
               ))
