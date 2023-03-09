@@ -7,7 +7,6 @@ from sqlalchemy.orm import Session
 
 from app import crud
 from app.api import deps
-from app.clients.reddit import RedditClient
 from app.schemas.diary import (
     Diary,
     DiaryCreate,
@@ -17,7 +16,6 @@ from app.schemas.diary import (
 from app.models.user import User
 
 router = APIRouter()
-DIARY_SUBREDDITS = ["diaries", "easydiaries", "TopSecretDiaries"]
 
 
 @router.get("/{diary_id}", status_code=200, response_model=Diary)
@@ -115,39 +113,3 @@ def update_diary(
 
     updated_diary = crud.diary.update(db=db, db_obj=diary, obj_in=diary_in)
     return updated_diary
-
-
-'''
-async def get_reddit_top_async(subreddit: str) -> list:
-    async with httpx.AsyncClient() as client:
-        response = await client.get(
-            f"https://www.reddit.com/r/{subreddit}/top.json?sort=top&t=day&limit=5",
-            headers={"User-agent": "diary bot 0.1"},
-        )
-
-    subreddit_diaries = response.json()
-    subreddit_data = []
-    for entry in subreddit_diaries["data"]["children"]:
-        score = entry["data"]["score"]
-        title = entry["data"]["title"]
-        link = entry["data"]["url"]
-        subreddit_data.append(f"{str(score)}: {title} ({link})")
-    return subreddit_data
-
-
-@router.get("/ideas/async")
-async def fetch_ideas_async(
-    user: User = Depends(deps.get_current_active_superuser),
-) -> dict:
-    results = await asyncio.gather(
-        *[get_reddit_top_async(subreddit=subreddit) for subreddit in DIARY_SUBREDDITS]
-    )
-    return dict(zip(DIARY_SUBREDDITS, results))
-
-
-@router.get("/ideas/")
-def fetch_ideas(reddit_client: RedditClient = Depends(deps.get_reddit_client)) -> dict:
-    return {
-        key: reddit_client.get_reddit_top(subreddit=key) for key in DIARY_SUBREDDITS
-    }
-'''
