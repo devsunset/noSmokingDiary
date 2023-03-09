@@ -97,11 +97,11 @@ class FastAPIClient {
     });
   }
 
-  createDiary(label, url, source, submitter_id) {
+  createDiary(title, content, writedate, submitter_id) {
     const diaryData = {
-      label,
-      url,
-      source,
+      title,
+      content,
+      writedate,
       submitter_id: submitter_id,
     };
     return this.apiClient.post(`/diaries/`, diaryData);

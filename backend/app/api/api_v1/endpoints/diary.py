@@ -65,10 +65,10 @@ def search_diaries(
     db: Session = Depends(deps.get_db),
 ) -> dict:
     """
-    Search for diaries based on label keyword
+    Search for diaries based on title keyword
     """
     diaries = crud.diary.get_multi(db=db, limit=max_results)
-    results = filter(lambda diary: keyword.lower() in diary.label.lower(), diaries)
+    results = filter(lambda diary: keyword.lower() in diary.title.lower(), diaries)
 
     return {"results": list(results)}
 
@@ -117,6 +117,7 @@ def update_diary(
     return updated_diary
 
 
+'''
 async def get_reddit_top_async(subreddit: str) -> list:
     async with httpx.AsyncClient() as client:
         response = await client.get(
@@ -149,3 +150,4 @@ def fetch_ideas(reddit_client: RedditClient = Depends(deps.get_reddit_client)) -
     return {
         key: reddit_client.get_reddit_top(subreddit=key) for key in DIARY_SUBREDDITS
     }
+'''

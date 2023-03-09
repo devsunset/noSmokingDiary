@@ -10,21 +10,21 @@ logger = logging.getLogger(__name__)
 DIARIES = [
     {
         "id": 1,
-        "label": "1 Day",
-        "source": "2023-03-9",
-        "url": "One Day ...",
+        "title": "1 Day",
+        "writedate": "2023-03-9",
+        "content": "One Day ...",
     },
     {
         "id": 2,
-        "label": "2 Day",
-        "source": "2023-03-10",
-        "url": "Two Day ...",
+        "title": "2 Day",
+        "writedate": "2023-03-10",
+        "content": "Two Day ...",
     },
     {
         "id": 3,
-        "label": "3 Day",
-        "source": "2023-03-11",
-        "url": "Three Day ...",  
+        "title": "3 Day",
+        "writedate": "2023-03-11",
+        "content": "Three Day ...",  
     },
 ]
 
@@ -57,9 +57,9 @@ def init_db(db: Session) -> None:
         if not user.diaries:
             for diary in DIARIES:
                 diary_in = schemas.DiaryCreate(
-                    label=diary["label"],
-                    source=diary["source"],
-                    url=diary["url"],
+                    title=diary["title"],
+                    writedate=diary["writedate"],
+                    content=diary["content"],
                     submitter_id=user.id,
                 )
                 crud.diary.create(db, obj_in=diary_in)

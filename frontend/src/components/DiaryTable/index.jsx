@@ -30,23 +30,23 @@ const DiaryTable = ({diaries}) => {
 								<FormInput
 									disabled
 									type={"text"}
-									name={"label"}
-									label={"Label"}
-									value={diaryInfoModal?.label}
+									name={"title"}
+									label={"Title"}
+									value={diaryInfoModal?.title}
 								/>
 								<FormInput
 									disabled
 									type={"text"}
-									name={"url"}
-									label={"Url"}
-									value={diaryInfoModal?.url}
+									name={"content"}
+									label={"Content"}
+									value={diaryInfoModal?.content}
 								/>
 								<FormInput
 									disabled
 									type={"text"}
-									name={"source"}
-									label={"Source"}
-									value={diaryInfoModal?.source}
+									name={"writedate"}
+									label={"Writedate"}
+									value={diaryInfoModal?.writedate}
 								/>
 							</form>
 						</div>

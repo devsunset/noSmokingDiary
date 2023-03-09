@@ -4,15 +4,15 @@ from typing import Sequence
 
 
 class DiaryBase(BaseModel):
-    label: str
-    source: str
-    url: str
+    title: str
+    content: str
+    writedate: str
 
 
 class DiaryCreate(DiaryBase):
-    label: str
-    source: str
-    url: str
+    title: str
+    writedate: str
+    content: str
     submitter_id: int
 
 
@@ -22,7 +22,7 @@ class DiaryUpdate(DiaryBase):
 
 class DiaryUpdateRestricted(BaseModel):
     id: int
-    label: str
+    title: str
 
 
 # Properties shared by models stored in DB

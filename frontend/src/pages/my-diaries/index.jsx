@@ -29,11 +29,11 @@ const ProfileView = ({ diaries }) => {
 
 const DiaryDashboard = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [error, setError] = useState({ label: "", url: "", source: "" });
+	const [error, setError] = useState({ title: "", content: "", writedate: "" });
 	const [diaryForm, setDiaryForm] = useState({
-		label: "",
-		url: "https://",
-		source: "",
+		title: "",
+		content: "",
+		writedate: "",
 	});
 
 	const [showForm, setShowForm] = useState(false);
@@ -53,39 +53,31 @@ const DiaryDashboard = () => {
 		});
 	};
 
-   const urlPatternValidation = URL => {
-        const regex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
-          return regex.test(URL);
-        };
-
 	const onCreateDiary = (e) => {
 		e.preventDefault();
 		setLoading(true);
 		setError(false);
 
-		if (diaryForm.label.length <= 0) {
+		if (diaryForm.title.length <= 0) {
 			setLoading(false);
-			return setError({ label: "Please Enter Diary Label" });
+			return setError({ title: "Please Enter Diary Title" });
 		}
-		if (diaryForm.url.length <= 0) {
+		if (diaryForm.content.length <= 0) {
 			setLoading(false);
-			return setError({ url: "Please Enter Diary Url" });
+			return setError({ content: "Please Enter Diary Content" });
 		}
-		if (!urlPatternValidation(diaryForm.url)) {
+
+		if (diaryForm.writedate.length <= 0) {
 			setLoading(false);
-			return setError({ url: "Please Enter Valid URL" });
-		}
-		if (diaryForm.source.length <= 0) {
-			setLoading(false);
-			return setError({ source: "Please Enter Diary Source" });
+			return setError({ source: "Please Enter Diary Writedate" });
 		}
 
 		client.fetchUser().then((user) => {
 			client
 				.createDiary(
-					diaryForm.label,
-					diaryForm.url,
-					diaryForm.source,
+					diaryForm.title,
+					diaryForm.content,
+					diaryForm.writedate,
 					user?.id
 				)
 				// eslint-disable-next-line no-unused-vars
@@ -156,37 +148,37 @@ const DiaryDashboard = () => {
 						<form className="mt-5" onSubmit={(e) => onCreateDiary(e)}>
 							<FormInput
 								type={"text"}
-								name={"label"}
-								label={"Label"}
-								error={error.label}
-								value={diaryForm.label}
+								name={"title"}
+								label={"Title"}
+								error={error.title}
+								value={diaryForm.title}
 								onChange={(e) =>
-									setDiaryForm({ ...diaryForm, label: e.target.value })
+									setDiaryForm({ ...diaryForm, title: e.target.value })
 								}
 							/>
 							<FormInput
 								type={"text"}
-								name={"url"}
-								label={"Url"}
+								name={"content"}
+								label={"Content"}
 								error={error.url}
 								value={diaryForm.url}
 								onChange={(e) =>
-									setDiaryForm({ ...diaryForm, url: e.target.value })
+									setDiaryForm({ ...diaryForm, content: e.target.value })
 								}
 							/>
 							<FormInput
 								type={"text"}
-								name={"source"}
-								label={"Source"}
-								error={error.source}
-								value={diaryForm.source}
+								name={"writedate"}
+								label={"Writedate"}
+								error={error.writedate}
+								value={diaryForm.writedate}
 								onChange={(e) =>
-									setDiaryForm({ ...diaryForm, source: e.target.value })
+									setDiaryForm({ ...diaryForm, writedate: e.target.value })
 								}
 							/>
 							<Button
 								loading={loading}
-								error={error.source}
+								error={error.writedate}
 								title={"Create Diary"}
 							/>
 						</form>
