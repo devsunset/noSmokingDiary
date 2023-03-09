@@ -7,6 +7,7 @@ import jwtDecode from "jwt-decode";
 import * as moment from "moment";
 import DiaryTable from "../../components/DiaryTable";
 import FormInput from "../../components/FormInput/FormInput";
+import FormTextarea from "../../components/FormTextarea/FormTextarea";
 import Button from "../../components/Button/Button";
 import { NotLoggedIn } from "./NotLoggedIn";
 import Loader from "../../components/Loader";
@@ -156,7 +157,7 @@ const DiaryDashboard = () => {
 									setDiaryForm({ ...diaryForm, title: e.target.value })
 								}
 							/>
-							<FormInput
+							<FormTextarea
 								type={"text"}
 								name={"content"}
 								label={"Content"}

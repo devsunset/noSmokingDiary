@@ -2,6 +2,7 @@ import Diary from "../Diary";
 import React, {useState} from "react";
 import PopupModal from "../Modal/PopupModal";
 import FormInput from "../FormInput/FormInput";
+import FormTextarea from "../FormTextarea/FormTextarea";
 
 const DiaryTable = ({diaries}) => {
 
@@ -34,7 +35,7 @@ const DiaryTable = ({diaries}) => {
 									label={"Title"}
 									value={diaryInfoModal?.title}
 								/>
-								<FormInput
+								<FormTextarea
 									disabled
 									type={"text"}
 									name={"content"}
