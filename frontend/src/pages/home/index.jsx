@@ -13,7 +13,7 @@ const Home = () => {
 
      const [loading, setLoading] = useState(true)
      const [diaries, setDiaries] = useState([])
-     const [searchValue, setSearchValue] = useState("chicken")
+     const [searchValue, setSearchValue] = useState("1 Day")
 
      useEffect(() => {
           // FETCH THE DIARIES

@@ -58,7 +58,8 @@ def fetch_user_diaries(
 @router.get("/search/", status_code=200, response_model=DiarySearchResults)
 def search_diaries(
     *,
-    keyword: str = Query(None, min_length=3, example="chicken"),
+    # keyword: str = Query(None, min_length=3, example="1 Day"),
+    keyword: str = Query(None, example="1 Day"),
     max_results: Optional[int] = 10,
     db: Session = Depends(deps.get_db),
 ) -> dict:
