@@ -11,19 +11,19 @@ DIARIES = [
     {
         "id": 1,
         "title": "1 Day",
-        "selfcheck": "2023-03-9",
+        "selfcheck": "Good",
         "content": "One Day ...",
     },
     {
         "id": 2,
         "title": "2 Day",
-        "selfcheck": "2023-03-10",
+        "selfcheck": "Bad",
         "content": "Two Day ...",
     },
     {
         "id": 3,
         "title": "3 Day",
-        "selfcheck": "2023-03-11",
+        "selfcheck": "Bad",
         "content": "Three Day ...",  
     },
 ]

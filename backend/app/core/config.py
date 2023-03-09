@@ -40,7 +40,6 @@ class Settings(BaseSettings):
     SQLALCHEMY_DATABASE_URI: Optional[str] = "sqlite:///nosmokingdiary.db"
     FIRST_SUPERUSER: EmailStr = "admin@nosmokingdiary.com"
     FIRST_SUPERUSER_PW: str = "1234"
-    FIRST_SUPERUSER_STOP_DATE: str = "2023-03-09"
 
     class Config:
         case_sensitive = True
