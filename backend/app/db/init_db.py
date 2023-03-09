@@ -11,19 +11,19 @@ DIARIES = [
     {
         "id": 1,
         "title": "1 Day",
-        "writedate": "2023-03-9",
+        "selfcheck": "2023-03-9",
         "content": "One Day ...",
     },
     {
         "id": 2,
         "title": "2 Day",
-        "writedate": "2023-03-10",
+        "selfcheck": "2023-03-10",
         "content": "Two Day ...",
     },
     {
         "id": 3,
         "title": "3 Day",
-        "writedate": "2023-03-11",
+        "selfcheck": "2023-03-11",
         "content": "Three Day ...",  
     },
 ]
@@ -58,7 +58,7 @@ def init_db(db: Session) -> None:
             for diary in DIARIES:
                 diary_in = schemas.DiaryCreate(
                     title=diary["title"],
-                    writedate=diary["writedate"],
+                    selfcheck=diary["selfcheck"],
                     content=diary["content"],
                     submitter_id=user.id,
                 )

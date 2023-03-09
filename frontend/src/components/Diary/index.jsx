@@ -31,7 +31,7 @@ const Diary = ({ diary,  showDiaryInfoModal }) => {
 										<path d="M20 6L9 17l-5-5"></path>
 									</svg>
 								</span>
-								{diary?.writedate}
+								{diary?.selfcheck}
 							</h2>
 						</div>
 					</div>

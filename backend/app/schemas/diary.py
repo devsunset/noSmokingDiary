@@ -6,12 +6,12 @@ from typing import Sequence
 class DiaryBase(BaseModel):
     title: str
     content: str
-    writedate: str
+    selfcheck: str
 
 
 class DiaryCreate(DiaryBase):
     title: str
-    writedate: str
+    selfcheck: str
     content: str
     submitter_id: int
 

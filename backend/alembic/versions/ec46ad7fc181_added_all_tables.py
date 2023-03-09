@@ -35,7 +35,7 @@ def upgrade():
         sa.Column("id", sa.Integer(), nullable=False),
         sa.Column("title", sa.String(length=256), nullable=False),
         sa.Column("content", sa.String(length=2048), nullable=True),
-        sa.Column("writedate", sa.String(length=256), nullable=True),
+        sa.Column("selfcheck", sa.String(length=256), nullable=True),
         sa.Column("submitter_id", sa.Integer(), nullable=True),
         sa.ForeignKeyConstraint(
             ["submitter_id"],

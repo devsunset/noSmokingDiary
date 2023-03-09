@@ -44,9 +44,9 @@ const DiaryTable = ({diaries}) => {
 								<FormInput
 									disabled
 									type={"text"}
-									name={"writedate"}
-									label={"Writedate"}
-									value={diaryInfoModal?.writedate}
+									name={"selfcheck"}
+									label={"Selfcheck"}
+									value={diaryInfoModal?.selfcheck}
 								/>
 							</form>
 						</div>

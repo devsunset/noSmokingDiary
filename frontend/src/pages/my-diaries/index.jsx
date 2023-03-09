@@ -29,11 +29,11 @@ const ProfileView = ({ diaries }) => {
 
 const DiaryDashboard = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [error, setError] = useState({ title: "", content: "", writedate: "" });
+	const [error, setError] = useState({ title: "", content: "", selfcheck: "" });
 	const [diaryForm, setDiaryForm] = useState({
 		title: "",
 		content: "",
-		writedate: "",
+		selfcheck: "",
 	});
 
 	const [showForm, setShowForm] = useState(false);
@@ -67,9 +67,9 @@ const DiaryDashboard = () => {
 			return setError({ content: "Please Enter Diary Content" });
 		}
 
-		if (diaryForm.writedate.length <= 0) {
+		if (diaryForm.selfcheck.length <= 0) {
 			setLoading(false);
-			return setError({ source: "Please Enter Diary Writedate" });
+			return setError({ source: "Please Enter Diary Selfcheck" });
 		}
 
 		client.fetchUser().then((user) => {
@@ -77,7 +77,7 @@ const DiaryDashboard = () => {
 				.createDiary(
 					diaryForm.title,
 					diaryForm.content,
-					diaryForm.writedate,
+					diaryForm.selfcheck,
 					user?.id
 				)
 				// eslint-disable-next-line no-unused-vars
@@ -168,17 +168,17 @@ const DiaryDashboard = () => {
 							/>
 							<FormInput
 								type={"text"}
-								name={"writedate"}
-								label={"Writedate"}
-								error={error.writedate}
-								value={diaryForm.writedate}
+								name={"selfcheck"}
+								label={"Selfcheck"}
+								error={error.selfcheck}
+								value={diaryForm.selfcheck}
 								onChange={(e) =>
-									setDiaryForm({ ...diaryForm, writedate: e.target.value })
+									setDiaryForm({ ...diaryForm, selfcheck: e.target.value })
 								}
 							/>
 							<Button
 								loading={loading}
-								error={error.writedate}
+								error={error.selfcheck}
 								title={"Create Diary"}
 							/>
 						</form>
