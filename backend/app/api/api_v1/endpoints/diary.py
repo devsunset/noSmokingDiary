@@ -48,7 +48,6 @@ def fetch_user_diaries(
     Fetch all diaries for a user
     """
     diaries = current_user.diaries
-    print(diaries)
     if not diaries:
         return {"results": list()}
 
@@ -68,7 +67,6 @@ def search_diaries(
     """
     diaries = crud.diary.get_multi(db=db, limit=max_results)
     results = filter(lambda diary: keyword.lower() in diary.title.lower(), diaries)
-
     return {"results": list(results)}
 
 
