@@ -17,7 +17,7 @@ function PopupModal({ onCloseBtnPress, modalTitle, children }) {
 								className="w-6 h-6"
 								fill="none"
 								viewBox="0 0 24 24"
-								stroke="rgb(13 148 136)"
+								stroke="rgb(40, 77, 179)"
 							>
 								<path
 									strokeLinecap="round"
