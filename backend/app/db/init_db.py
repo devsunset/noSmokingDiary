@@ -67,5 +67,5 @@ def init_db(db: Session) -> None:
         logger.warning(
             "Skipping creating superuser.  FIRST_SUPERUSER needs to be "
             "provided as an env variable. "
-            "e.g.  FIRST_SUPERUSER=admin@devsunset.com"
+            "e.g.  FIRST_SUPERUSER=admin@nosmokingdiary.com"
         )
