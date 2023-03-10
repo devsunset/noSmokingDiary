@@ -66,7 +66,10 @@ def search_diaries(
     Search for diaries based on title keyword
     """
     diaries = crud.diary.get_multi(db=db, limit=max_results)
-    results = filter(lambda diary: keyword.lower() in diary.title.lower(), diaries)
+    if keyword !=None and keyword !='':
+        results = filter(lambda diary: keyword.lower() in diary.title.lower(), diaries)
+    else:
+        results = diaries
     return {"results": list(results)}
 
 
