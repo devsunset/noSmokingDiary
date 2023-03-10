@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
 from app.db.base_class import Base
+from app.models.user import User
 
 ModelType = TypeVar("ModelType", bound=Base)
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)
@@ -29,7 +30,8 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         self, db: Session, *, skip: int = 0, limit: int = 5000
     ) -> List[ModelType]:
         return (
-            db.query(self.model).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
+            db.query(self.model).join(User, self.model.submitter_id == User.id).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
+            # db.query(self.model).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
         )
 
     def create(self, db: Session, *, obj_in: CreateSchemaType) -> ModelType:

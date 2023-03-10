@@ -16,6 +16,7 @@ class DiaryCreate(DiaryBase):
     submitter_id: int
 
 
+
 class DiaryUpdate(DiaryBase):
     id: int
 
