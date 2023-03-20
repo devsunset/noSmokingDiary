@@ -30,8 +30,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         self, db: Session, *, skip: int = 0, limit: int = 5000
     ) -> List[ModelType]:
         return (
-            db.query(self.model).join(User, self.model.submitter_id == User.id).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
-            # db.query(self.model).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
+            db.query(self.model).order_by(desc(self.model.id)).offset(skip).limit(limit).all()
         )
 
     def create(self, db: Session, *, obj_in: CreateSchemaType) -> ModelType:
