@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import PopupModal from "../Modal/PopupModal";
 import FormInput from "../FormInput/FormInput";
 import FormTextarea from "../FormTextarea/FormTextarea";
+import FormSelectBox from "../FormSelectBox/FormSelectBox";
 
 const DiaryTable = ({diaries}) => {
 
@@ -42,9 +43,8 @@ const DiaryTable = ({diaries}) => {
 									label={"Content"}
 									value={diaryInfoModal?.content}
 								/>
-								<FormInput
+								<FormSelectBox
 									disabled
-									type={"text"}
 									name={"selfcheck"}
 									label={"Selfcheck"}
 									value={diaryInfoModal?.selfcheck}

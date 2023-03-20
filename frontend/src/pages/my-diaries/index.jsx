@@ -8,6 +8,7 @@ import * as moment from "moment";
 import DiaryTable from "../../components/DiaryTable";
 import FormInput from "../../components/FormInput/FormInput";
 import FormTextarea from "../../components/FormTextarea/FormTextarea";
+import FormSelectBox from "../../components/FormSelectBox/FormSelectBox";
 import Button from "../../components/Button/Button";
 import { NotLoggedIn } from "./NotLoggedIn";
 import Loader from "../../components/Loader";
@@ -167,8 +168,7 @@ const DiaryDashboard = () => {
 									setDiaryForm({ ...diaryForm, content: e.target.value })
 								}
 							/>
-							<FormInput
-								type={"text"}
+							<FormSelectBox
 								name={"selfcheck"}
 								label={"Selfcheck"}
 								error={error.selfcheck}
