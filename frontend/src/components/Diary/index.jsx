@@ -14,9 +14,6 @@ const Diary = ({ diary,  showDiaryInfoModal }) => {
 							<h2 className="mb-4 font-semibold tracking-widest text-white uppercase title-font">
 								{diary?.title}
 							</h2>
-							<h2 className="mb-4 font-semibold tracking-widest text-white title-font">
-								{diary?.submitter_id}
-							</h2>
 							<h2 className="items-center mb-2 text-lg font-normal tracking-wide text-white">
 								<span className="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white rounded-full bg-blue-1300">
 									<svg

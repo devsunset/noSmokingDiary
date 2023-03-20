@@ -58,7 +58,7 @@ def fetch_user_diaries(
 def search_diaries(
     *,
     # keyword: str = Query(None, min_length=3, example="1 Day"),
-    keyword: str = Query(None, example="1 Day"),
+    keyword: str = Query(None, example=""),
     max_results: Optional[int] = 10,
     db: Session = Depends(deps.get_db),
 ) -> dict:
