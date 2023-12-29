@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     # e.g: '["http://localhost", "http://localhost:4200", "http://localhost:3000", \
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
+        "https://152.70.91.9:8181",
+        "https://nosmokingdiary.web.app",
         "http://localhost:3000",
         "http://localhost:8001", 
     ]
