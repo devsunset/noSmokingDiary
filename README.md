@@ -12,8 +12,8 @@ FRONTEND : React
 5. poetry run python prestart.py 
 6. poetry run ./run.sh [UNIX]
 7. poetry run python app/main.py [WINDOWS]
-8. Open http://localhost:8181/
-9. Open http://localhost:8181/docs
+8. Open https://localhost:8181/
+9. Open https://localhost:8181/docs
  
 ## Setup & Run Frontend (requires backend to be running)
 1. Install nodejs (>=v14) & npm
