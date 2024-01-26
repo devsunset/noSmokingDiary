@@ -17,6 +17,7 @@ TEMPLATES = Jinja2Templates(directory=str(BASE_PATH / "templates"))
 root_router = APIRouter()
 app = FastAPI(title="No Smoking Diary API", openapi_url=f"{settings.API_V1_STR}/openapi.json")
 
+
 # Set all CORS enabled origins
 if settings.BACKEND_CORS_ORIGINS:
     app.add_middleware(
@@ -40,6 +41,21 @@ def root(
     diaries = crud.diary.get_multi(db=db, limit=10)
     return TEMPLATES.TemplateResponse(
         "index.html",
+        {"request": request, "diaries": diaries},
+    )
+
+# temp SSL for Free 
+@root_router.get("/.well-known/pki-validation/E2A943F939E33632370E6D55D5E0D3A3.txt", status_code=200)
+def root(
+    request: Request,
+    db: Session = Depends(deps.get_db),
+) -> dict:
+    """
+    Root GET
+    """
+    diaries = crud.diary.get_multi(db=db, limit=10)
+    return TEMPLATES.TemplateResponse(
+        "E2A943F939E33632370E6D55D5E0D3A3.txt",
         {"request": request, "diaries": diaries},
     )
 
