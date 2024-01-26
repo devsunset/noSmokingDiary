@@ -17,13 +17,14 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
 
     # BACKEND_CORS_ORIGINS is a JSON-formatted list of origins
-    # e.g: '["http://localhost", "http://localhost:4200", "http://localhost:3000", \
+    # e.g: '["http://localhost", "http://localhost:8181", "http://localhost:3000", \
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
         "https://152.70.91.9:8181",
+        "https://sunsetserver.mooo.com:8181",
         "https://nosmokingdiary.web.app",
         "http://localhost:3000",
-        "http://localhost:8001", 
+        "http://localhost:8181", 
     ]
 
     # Origins that match this regex OR are in the above list are allowed

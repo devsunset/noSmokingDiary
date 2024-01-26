@@ -65,7 +65,7 @@ function DashboardHeader() {
         </div>
         <div className={`animate-fade-in-down w-full ${toggleMenu ? "block" : "hidden"} flex-grow lg:flex lg:items-center lg:w-auto`}>
             <div className="text-sm lg:flex-grow">
-                <a href={"http://localhost:8001/docs"} target={"_blank"} rel={"noreferrer"}
+                <a href={"http://localhost:8181/docs"} target={"_blank"} rel={"noreferrer"}
                     className="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mx-4">
                     API Docs
                 </a>
